@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'finanzas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'carrito',  # DATABASE
-        'USER': 'root',  # USERNAME
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
+        'NAME': 'ccwgvkqaz6j0soch',  # DATABASE
+        'USER': 'jkw6cltam1tl6lc9',  # USERNAME
+        'PASSWORD': 'nphgujer6yi8vmep',
+        'HOST': 'ohunm00fjsjs1uzy.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
         'PORT': '3306'
     }
 }
