@@ -132,7 +132,7 @@ STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'administracion.UsuarioModel'
 
-
+CORS_ALLOW_ALL_PRIGINS=True
 
 REST_FRAMEWORK= {
     'DEFAULT_AUTHENTICATION_CLASSES' : (
