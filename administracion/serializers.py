@@ -24,7 +24,7 @@ class ProductoSerializer(serializers.ModelSerializer):
         print(self.instance)
         print(self.validated_data)
         self.instance.productoNombre = self.validated_data.get("productoNombre")
-        self.instance.productoCantidad = self.validated_data.get("productoCantidad")
+        self.instance.productoStock = self.validated_data.get("productoStock")
        # self.instance.productoFoto = self.validated_data.get("productoFoto")
         self.instance.productoPrecio = self.validated_data.get("productoPrecio")
         self.instance.categoria = self.validated_data.get("categoria")
