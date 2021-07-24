@@ -84,6 +84,7 @@ class ProductoModel(models.Model):
         primary_key=True,
         db_column='producto_id',
         null=False
+        
     )
     productoNombre = models.CharField(
         db_column='producto_nombre',
@@ -96,12 +97,13 @@ class ProductoModel(models.Model):
         verbose_name='Cantidad de los productos',
         null=False
     )
-    productoFoto = models.ImageField(
-        upload_to='producto/',
-        db_column='producto_foto',
-        verbose_name='Foto del producto',
-        null=False
-    )
+    #productoFoto = models.ImageField(
+     #   upload_to='producto/',
+       # db_column='producto_foto',
+       # verbose_name='Foto del producto',
+        #null=True,
+        
+    #)
     productoPrecio = models.DecimalField(
         db_column='producto_precio',
         max_digits=5,

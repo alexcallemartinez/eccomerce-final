@@ -25,7 +25,7 @@ class ProductoSerializer(serializers.ModelSerializer):
         print(self.validated_data)
         self.instance.productoNombre = self.validated_data.get("productoNombre")
         self.instance.productoCantidad = self.validated_data.get("productoCantidad")
-        self.instance.productoFoto = self.validated_data.get("productoFoto")
+       # self.instance.productoFoto = self.validated_data.get("productoFoto")
         self.instance.productoPrecio = self.validated_data.get("productoPrecio")
         self.instance.categoria = self.validated_data.get("categoria")
         self.instance.save()
@@ -72,7 +72,7 @@ class MostrarProductoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model=ProductoModel
-        fields=['productoNombre','productoFoto','productoPrecio']
+        fields=['productoNombre','productoPrecio']
 
 class PedidosEscrituraSerializer(serializers.ModelSerializer):
     

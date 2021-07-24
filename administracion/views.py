@@ -116,9 +116,9 @@ class ProductoController(generics.ListCreateAPIView):
             'message':None
           })
     def post(self, request):
-        formato=request.FILES['productoFoto'].name.split('.')[1]
-        nombre=str(uuid4())+'.'+formato
-        request.FILES['productoFoto'].name=nombre
+        #formato=request.FILES['productoFoto'].name.split('.')[1]
+        #nombre=str(uuid4())+'.'+formato
+        #request.FILES['productoFoto'].name=nombre
         respuesta=self.serializer_class(data=request.data)
         if respuesta.is_valid():
             respuesta.save()
@@ -150,9 +150,9 @@ class ProductosController(generics.RetrieveUpdateDestroyAPIView):
         }) 
     def put(self, request, id):
         producto= self.get_queryset(id)
-        formato=request.FILES['productoFoto'].name.split('.')[1]
-        nombre=str(uuid4())+'.'+formato
-        request.FILES['productoFoto'].name=nombre
+        #formato=request.FILES['productoFoto'].name.split('.')[1]
+        #nombre=str(uuid4())+'.'+formato
+        #request.FILES['productoFoto'].name=nombre
         respuesta=self.serializer_class(instance=producto,data=request.data)
         if respuesta.is_valid():
             respuesta.update()
@@ -170,14 +170,14 @@ class ProductosController(generics.RetrieveUpdateDestroyAPIView):
 
     def delete(self, request, id):
         producto= self.get_queryset(id)
-        foto= str(producto.productoFoto)
-        try:
+        #foto= str(producto.productoFoto)
+        #try:
 
-            ruta_imagen=settings.MEDIA_RUT / foto
-            os.remove(ruta_imagen)
+         #   ruta_imagen=settings.MEDIA_RUT / foto
+         #   os.remove(ruta_imagen)
 
-        except:
-            print('fotografia del producto no existe') 
+        #except:
+         #   print('fotografia del producto no existe') 
         producto.delete()
         return Response({
             'success':True,
