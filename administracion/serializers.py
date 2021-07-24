@@ -73,6 +73,12 @@ class MostrarProductoSerializer(serializers.ModelSerializer):
     class Meta:
         model=ProductoModel
         fields=['productoNombre','productoPrecio']
+        
+class MostrarUsuarioSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model=UsuarioModel
+        fields=['usuarioNombre']
 
 class PedidosEscrituraSerializer(serializers.ModelSerializer):
     
@@ -94,7 +100,7 @@ class PedidosEscrituraSerializer(serializers.ModelSerializer):
 
 class PedidosLecturaSerializer(serializers.ModelSerializer):
    
-
+    usuario=MostrarUsuarioSerializer(many=False, read_only=True)
     producto=MostrarProductoSerializer(many=False, read_only=True)
     class Meta:
         model = PedidoModel
