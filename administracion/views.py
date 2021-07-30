@@ -218,13 +218,12 @@ class PedidoController(generics.CreateAPIView):
 class PedidosController(generics.RetrieveUpdateDestroyAPIView):
     queryset=PedidoModel.objects.all()
     serializer_class=PedidosEscrituraSerializer
-    serializer_class1=PedidosLecturaSerializer
-
+    
     def get_queryset(self, id):
         return PedidoModel.objects.get(pedidoId=id)
 
     def get(self, request, id):
-        resultado = self.serializer_class1(instance=self.get_queryset(id))
+        resultado = self.serializer_class(instance=self.get_queryset(id))
         return Response({
             'success':True,
             'content':resultado.data,
